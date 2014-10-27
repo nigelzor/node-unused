@@ -16,8 +16,8 @@
     "url": "git://github.com/Kami/node-unused.git"
   },
   "dependencies": {
-    "optimist": "0.6.0",
-    "esprima": "1.0.0"
+    "esprima-fb": "7001.1.0-dev-harmony-fb",
+    "optimist": "0.6.0"
   },
   "devDependencies": {
     "mocha": "1.6.0"

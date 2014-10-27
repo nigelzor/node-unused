@@ -1,9 +1,12 @@
-var esprima = require('esprima');
+var esprima = require('esprima-fb');
 
 var Context = require('./lib/context');
 
 // return a list of unused variables in the source
 function unused(src) {
+    if (typeof src !== 'string') src = String(src);
+    src = src.replace(/^#![^\n]*\n/, '\n');
+
     var ast = esprima.parse(src, {
         loc: true
     });
@@ -18,7 +21,7 @@ function unused(src) {
         }
 
         handlers[node.type](node, context);
-    };
+    }
 
     function maybe_set_id(id, context, is_param) {
         if (!id) {
